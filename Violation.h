@@ -1,5 +1,6 @@
 #pragma once
 #include "DateMac.h"
+#include <iomanip>
 
 struct Violation {
     Date date_viol; // 0 0 0   Дата порушення
@@ -19,9 +20,14 @@ struct Violation {
     }
 
     void printViolation() {
-        cout << "\t Date: " << date_viol.toString() << endl;
+        cout << "\t Date: " << date_viol.toString("%d %m %Y") << endl;
         cout << "\t Info: " << info << endl;
         cout << "\t Fine: " << fine << " UAH \n\n";
+    }
+
+    void printTableViolation() {
+        cout << "|" << setw(12) << date_viol.toString("%d.%m.%Y")
+        << "|" << setw(15) << info << "|" << setw(10) << fine << "UAH |" << endl;
     }
 };
 
