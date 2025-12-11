@@ -43,15 +43,25 @@ struct Driver {
             cout << "List of violations is empty!\n";
         else {
             float sum = 0;
+            cout << "===============================================================\n";
+            cout << "ACTIVE VIOLATIONS:\n";
             for (int i = 0; i < sizeViol; i++) {
                 if ( arrViol[i].fine > 0 ) {
                     arrViol[i].printTableViolation();
                     sum += arrViol[i].fine;
                 }
             }
-            cout << "========================================\n";
+            cout << "===============================================================\n";
             cout << "Total fine: " << sum << "UAH\n";
-            cout << "========================================\n";
+            cout << "===============================================================\n";
         }
+    }
+
+    void delViolations() {
+        myRemoveIf<Violation>(arrViol, sizeViol, [](Violation obj) {
+            if (obj.fine == 0)
+                cout << "DELETE: " << obj.info << endl;
+            return obj.fine == 0;
+        });
     }
 };

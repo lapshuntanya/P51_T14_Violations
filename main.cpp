@@ -33,6 +33,10 @@ int main() {
     //d1.addViolation();
     cout << "------------------------------------------\n";
     d1.printDriver();
+    d1.showActiveViolations();
+
+    d1.delViolations();
+    d1.printDriver();
 
     return 0;
 }
