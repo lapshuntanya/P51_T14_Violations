@@ -13,6 +13,7 @@ struct Violation {
         //date_viol.fillDate();
 
         cout << "Input info: ";
+        cin.ignore();// Ігнорування ентеру
         cin.getline(info, 100); // !!!!!!!!!!!!!!!
 
         cout << "Input fine: ";
@@ -27,7 +28,7 @@ struct Violation {
 
     void printTableViolation() {
         cout << "|" << setw(12) << date_viol.toString("%d.%m.%Y")
-        << "|" << setw(15) << info << "|" << setw(10) << fine << "UAH |" << endl;
+        << "|" << setw(25) << info << "|" << setw(10) << fine << "UAH |" << endl;
     }
 };
 
