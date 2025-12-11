@@ -31,4 +31,11 @@ struct Driver {
         cout << endl;
     }
 
+    void addViolation() {
+        Violation tmp;
+        tmp.fillViolation();
+
+        addItemBack(arrViol, sizeViol, tmp);
+    }
+
 };
