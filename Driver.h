@@ -38,4 +38,20 @@ struct Driver {
         addItemBack(arrViol, sizeViol, tmp);
     }
 
+    void showActiveViolations() {
+        if (sizeViol == 0)
+            cout << "List of violations is empty!\n";
+        else {
+            float sum = 0;
+            for (int i = 0; i < sizeViol; i++) {
+                if ( arrViol[i].fine > 0 ) {
+                    arrViol[i].printTableViolation();
+                    sum += arrViol[i].fine;
+                }
+            }
+            cout << "========================================\n";
+            cout << "Total fine: " << sum << "UAH\n";
+            cout << "========================================\n";
+        }
+    }
 };
